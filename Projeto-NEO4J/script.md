@@ -1,133 +1,128 @@
-CREATE(f: Professor {
-  nome: 'Francisco do Nascimento',
-  titulacao: 'Doutorado',
-  formacao: 'Ciencia da Computacao',
-  email: 'francisco.junior@jaboatao.ifpe.edu.br'
-});
-CREATE(d: Professor {
-  nome: 'Diego dos Passos',
-  titulacao: 'Mestre',
-  formacao: 'Engenharia da Computacao',
-  email: 'diego.silva@jaboatao.ifpe.edu.br'
-});
-CREATE(j: Professor {
-  nome: 'Josino Rodrigues',
-  titulacao: 'Mestre',
-  formacao: 'Analise e Desenvolvimento de Sistemas',
-  email: 'josino.neto@jaboatao.ifpe.edu.br'
-});
-CREATE(l: Professor {
-  nome: 'Luciano de Souza',
-  titulacao: 'Doutorado',
-  formacao: 'Ciencia da Computacao',
-  email: 'luciano.cabral@jaboatao.ifpe.edu.br'
-});
-CREATE(a: Professor {
-  nome: 'Ana Josil Sa Barreto',
-  titulacao: 'Mestrado',
-  formacao: 'Letras',
-  email: 'ana.montenegro@jaboatao.ifpe.edu.br'
-});
+OBJETIVO
+// Grafo com informações do período 2022 - 1
 
-CREATE(j1: Disciplina { nome: 'Sistemas Distribuidos', CH: 60 })
-CREATE(j2: Disciplina { nome: 'WEB III', CH: 40 })
-CREATE(j3: Disciplina { nome: 'WEB II', CH: 80 })
+```javascript
+CREATE(Francisco: Professor { nome: 'Francisco do Nascimento', titulacao: 'Doutorado', formacao: 'Ciencia da Computacao', email: 'francisco.junior@jaboatao.ifpe.edu.br' })
+CREATE(Diego: Professor { nome: 'Diego dos Passos', titulacao: 'Mestre', formacao: 'Engenharia da Computacao', email: 'diego.silva@jaboatao.ifpe.edu.br' })
+CREATE(Josino: Professor { nome: 'Josino Rodrigues', titulacao: 'Mestre', formacao: 'Analise e Desenvolvimento de sistemas', email: 'josino.neto@jaboatao.ifpe.edu.br' })
+CREATE(Luciano: Professor { nome: 'Luciano de Souza', titulacao: 'Doutorado', formacao: 'Ciencia da Computacao', email: 'luciano.cabral@jaboatao.ifpe.edu.br' })
+CREATE(Ana: Professor { nome: 'Ana Josil Sa Barreto', titulacao: 'Mestrado', formacao: 'Letras', email: 'ana.montenegro@jaboatao.ifpe.edu.br' })
 
-CREATE(f1: Disciplina { nome: 'Projeto e Pratica I', CH: 80 })
-
-CREATE(d1: Disciplina { nome: 'Redes de Computadores', CH: 80 })
-CREATE(d2: Disciplina { nome: 'Segurança de Sistemas', CH: 80 })
-
-CREATE(a1: Disciplina { nome: 'Portugues Instrumental', CH: 60 })
-CREATE(a2: Disciplina { nome: 'Ingles I', CH: 60 })
-
-CREATE(l1: Disciplina { nome: 'Inteligencia Artificial', CH: 60 })
+CREATE(Sistemas: Disciplina { nome: 'Sistemas Distribuidos', CH: 60 })
+CREATE(WEBII: Disciplina { nome: 'WEB III', CH: 40 })
+CREATE(WEBIII: Disciplina { nome: 'WEB II', CH: 80 })
+CREATE(Projeto: Disciplina { nome: 'Projeto e Pratica I', CH: 80 })
+CREATE(Redes: Disciplina { nome: 'Redes de Computadores', CH: 80 })
+CREATE(Seguranca: Disciplina { nome: 'Segurança de Sistemas', CH: 80 })
+CREATE(Portugues: Disciplina { nome: 'Portugues Instrumental', CH: 60 })
+CREATE(Ingles: Disciplina { nome: 'Ingles I', CH: 60 })
+CREATE(Inteligencia: Disciplina { nome: 'Inteligencia Artificial', CH: 60 })
 
 CREATE(ads: Curso { nome: 'ADS', coord: 'Diego dos Passos' })
 CREATE(ipi: Curso { nome: 'IPI', coord: 'Francisco do Nascimento' })
 CREATE(qualidade: Curso { nome: 'Qualidade', coord: 'Francisco Chaves' })
 
-CREATE(mg: Aluno {
-  nome: 'Marcilio Goncalves Santos Junior',
-  idade: 29,
-  cidade: 'Jaboatao dos Guararapes',
-  formacao: 'N/A'
-});
-CREATE(tb: Aluno {
-  nome: 'Talitha Bianka Santana Da Silva Santiago',
-  idade: 18,
-  cidade: 'Recife',
-  formacao: 'N/A'
-});
-CREATE(ma: Aluno {
-  nome: 'Mayara Alves De Andrade',
-  idade: 21,
-  cidade: 'Jaboatao dos Guararapes',
-  formacao: 'N/A'
-});
-CREATE(ap: Aluno {
-  nome: 'Allan Patrick Freire Nascimento',
-  idade: 23,
-  cidade: 'Recife',
-  formacao: 'N/A'
-});
-CREATE(rg: Aluno {
-  nome: 'Romullo Gomes De Souza',
-  idade: 24,
-  cidade: 'Jaboatao dos Guararapes',
-  formacao: 'N/A'
-});
-CREATE(ab: Aluno {
-  nome: 'Ana Beatriz Rodrigues Dos Santos ',
-  idade: 29,
-  cidade: 'Jaboatao dos Guararapes',
-  formacao: 'N/A'
-});
+CREATE(Marcilio: Aluno { nome: 'Marcilio Goncalves Santos Junior', idade: 29, cidade: 'Jaboatao dos Guararapes', formacao: 'N/A' }),
+(Talitha: Aluno { nome: 'Talitha Bianka Santana Da Silva Santiago', idade: 18, cidade: 'Recife', formacao: 'N/A' }),
+(Mayara: Aluno { nome: 'Mayara Alves De Andrade', idade: 21, cidade: 'Jaboatao dos Guararapes', formacao: 'N/A' }),
+(Allan: Aluno { nome: 'Allan Patrick Freire Nascimento', idade: 23, cidade: 'Recife', formacao: 'N/A' }),
+(Romullo: Aluno { nome: 'Romullo Gomes De Souza', idade: 24, cidade: 'Jaboatao dos Guararapes', formacao: 'N/A' }),
+(Bia: Aluno { nome: 'Ana Beatriz Rodrigues Dos Santos ', idade: 29, cidade: 'Jaboatao dos Guararapes', formacao: 'N/A' })
 
-CREATE (d)-[:ministra{ turno: 'manha' }]->(d1)
-CREATE (d)-[:ministra{ turno: 'manha' }]->(d2)
-CREATE (j)-[:ministra{ turno: 'manha' }]->(j1)
-CREATE (j)-[:ministra{ turno: 'manha' }]->(j2)
-CREATE (j)-[:ministra{ turno: 'manha' }]->(j3)
-CREATE (p1)-[:ministra{ turno: 'noite' }]->(d1)
-CREATE (a)-[:ministra{ turno: 'noite' }]->(a1)
-CREATE (a)-[:ministra{ turno: 'noite' }]->(a2)
-CREATE (l)-[:ministra{ turno: 'noite' }]->(l1)
+CREATE (Sistemas)-[:fazparte{ periodo: 1 }]->(ads)
+CREATE (WEBII)-[:fazparte{ periodo: 1 }]->(ads)
+CREATE (WEBIII)-[:fazparte{ periodo: 1 }]->(ads)
+CREATE (Projeto)-[:fazparte{ periodo: 1 }]->(ads)
+CREATE (Redes)-[:fazparte{ periodo: 1 }]->(ads)
+CREATE (Seguranca)-[:fazparte{ periodo: 1 }]->(ads)
+CREATE (Portugues)-[:fazparte{ periodo: 2 }]->(ipi)
+CREATE (Ingles)-[:fazparte{ periodo: 2 }]->(ipi)
+CREATE (Inteligencia)-[:fazparte{ periodo: 1 }]->(ads)
 
-CREATE (mg)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a2)
-CREATE (mg)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1)
-CREATE (mg)-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(f1)
-CREATE (mg)-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(j1)
-CREATE (mg)-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'aprovado' }]->(d2)
-CREATE (mg)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(j2)
-CREATE (tb)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a2)
-CREATE (tb)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1)
-CREATE (tb)-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(f1)
-CREATE (tb)-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(j1)
-CREATE (tb)-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'pendente' }]->(l1)
-CREATE (ab)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a1)
-CREATE (ab)-[:pagadisciplina{ MF: 9.2, semestre: 2, situacao: 'aprovado' }]->(a2)
-CREATE (ab)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a2)
+CREATE (Diego)-[:ministra{ turno: 'manha' }]->(Redes)
+CREATE (Diego)-[:ministra{ turno: 'manha' }]->(Seguranca)
+CREATE (Josino)-[:ministra{ turno: 'manha' }]->(Sistemas)
+CREATE (Josino)-[:ministra{ turno: 'manha' }]->(WEBII)
+CREATE (Josino)-[:ministra{ turno: 'manha' }]->(WEBIII)
+CREATE (Francisco)-[:ministra{ turno: 'noite' }]->(Projeto)
+CREATE (Ana)-[:ministra{ turno: 'noite' }]->(Portugues)
+CREATE (Ana)-[:ministra{ turno: 'noite' }]->(Ingles)
+CREATE (Luciano)-[:ministra{ turno: 'noite' }]->(Inteligencia)
 
-CONSULTAS
+CREATE (Marcilio)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Ingles)
+CREATE (Marcilio)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Redes)
+CREATE (Marcilio)-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(Projeto)
+CREATE (Marcilio)-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(Sistemas)
+CREATE (Marcilio)-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'aprovado' }]->(Seguranca)
+CREATE (Marcilio)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(WEBIII)
+CREATE (Talitha)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Ingles)
+CREATE (Talitha)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Redes)
+CREATE (Talitha)-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(Projeto)
+CREATE (Talitha)-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(Sistemas)
+CREATE (Talitha)-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'pendente' }]->(Inteligencia)
+CREATE (Bia)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Portugues)
+CREATE (Bia)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Ingles)
+```
 
-<!-- Encontre o aluno, cujo o final do sobrenome é Junior"... -->
-MATCH (aluno:Aluno) WHERE aluno.nome AS Aluno ends with 'Junior'  RETURN aluno.nome
+### Atualizações
 
-<!-- Procurar pelo aluno, cuja idade é 21 anos e mora em Recife  -->
-MATCH (aluno:Aluno{ cidade: 'Recife' }) WHERE aluno.idade >= 21 RETURN aluno.nome, aluno.idade
+#### Atualização do nome Lógica de Programacao para o mesmo nome sem acentos:
+```javascript
+  MATCH (d:Disciplina { CH: 100 }) SET d.nome = "Logica de Programacao" RETURN *
+```
 
-<!-- Listagem das disciplinas de cada professor do turno da noite  -->
-MATCH (aluno:Aluno{ cidade: 'Recife' }) WHERE aluno.idade >= 21 RETURN aluno.nome, aluno.idade
+#### Atualização dos relacionamentos dos alunos que não tinham relacionamentos com disciplina
+```javascript
+  MATCH
+      (a1:Aluno { nome: 'Mayara Alves De Andrade' }),
+      (a2:Aluno { nome: 'Allan Patrick Freire Nascimento' }),
+      (a3:Aluno { nome: 'Romullo Gomes De Souza' }),
+      (d1:Disciplina { nome: 'Portugues Instrumental' })
+  WITH a1, a2, a3, d1
+  CREATE
+      (a1)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1),
+      (a2)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1),
+      (a3)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1)
+```
 
-<!-- Excluir todos os nós e seus relacionamentos -->
-MATCH (n) DETACH DELETE n;
+### CONSULTAS
 
-<!-- Quantidade de relacionamentos -->
-MATCH ()-->() RETURN count(*);
+#### Seleção de nome e idade dos alunos que cursaram lógica de programação no primeiro período do curso ads
+```javascript
+  MATCH(d:Disciplina)-[fp:fazparte{ periodo: 1 }]->(c:Curso{ nome: 'ADS' }) RETURN *
+```
 
-<!-- Quantidade de nós -->
-MATCH (n) RETURN count(n);
+#### Encontre o aluno, cujo o final do sobrenome é Junior"...
+```javascript
+  MATCH (aluno:Aluno) WHERE aluno.nome AS Aluno ends with 'Junior'  RETURN aluno.nome
+```
 
-<!-- Lista de todas as labels -->
-CALL db.labels()
+#### Procurar pelo aluno, cuja idade é 21 anos e mora em Recife 
+```javascript
+  MATCH (aluno:Aluno{ cidade: 'Recife' }) WHERE aluno.idade >= 21 RETURN aluno.nome, aluno.idade
+```
+
+#### Listagem das disciplinas de cada professor do turno da noite 
+```javascript
+  MATCH (aluno:Aluno{ cidade: 'Recife' }) WHERE aluno.idade >= 21 RETURN aluno.nome, aluno.idade
+```
+
+#### Excluir todos os nós e seus relacionamentos
+```javascript
+  MATCH (n) DETACH DELETE n
+```
+
+#### Quantidade de relacionamentos
+```javascript
+  MATCH ()-->() RETURN count(*)
+```
+
+#### Quantidade de nós
+```javascript
+  MATCH (n) RETURN count(n)
+```
+
+#### Lista de todas as labels
+```javascript
+  CALL db.labels()
+```
