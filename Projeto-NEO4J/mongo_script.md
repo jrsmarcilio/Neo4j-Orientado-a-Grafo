@@ -95,7 +95,7 @@ Realizar a migração de dados do projeto da Unidade 1.
           "numero": "35"
         },
         prescricao: [
-          {"medicamento":"Mantidan 100 mg COMP Marca","administracao":"Administrar 1 cp","data":{"$date":"2022-01-25T18:22:16.000Z"}}
+          {"medicamento":"Mantidan 100 mg COMP Marca","administracao":"Administrar 1 cp","data":{"$date":"2022-01-25T18:22:16.000Z"}},
           {"medicamento":"DIPIRONA 500MG, CP 444 MG","administracao":"COMPRIMIDO Administrar 3 MILIGRAMA, VIA FD - FEDIDIUM 1 x ao Dia Início: 23:00 - Diluir Conforme Protocolo da Unidade.","data":{"$date":"2022-01-25T18:03:57.000Z"}}
         ],
       },
@@ -240,6 +240,7 @@ Realizar a migração de dados do projeto da Unidade 1.
   ```
 
 #### Selecionar dados (Find( )) 
+
 
 
 #### Extra 
