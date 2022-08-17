@@ -85,7 +85,7 @@ CREATE (Bia)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(In
       (a3)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1)
 ```
 
-### CONSULTAS
+### Consultas
 
 #### Seleção de nome e idade dos alunos que cursaram lógica de programação no primeiro período do curso ads
 ```javascript
@@ -97,14 +97,24 @@ CREATE (Bia)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(In
   MATCH (aluno:Aluno) WHERE aluno.nome AS Aluno ends with 'Junior'  RETURN aluno.nome
 ```
 
-#### Procurar pelo aluno, cuja idade é 21 anos e mora em Recife 
+#### Procurar pelo aluno, cuja idade é maior ou igual 21 anos e mora em Recife 
 ```javascript
   MATCH (aluno:Aluno{ cidade: 'Recife' }) WHERE aluno.idade >= 21 RETURN aluno.nome, aluno.idade
 ```
 
-#### Listagem das disciplinas de cada professor do turno da noite 
+#### Listagem das disciplinas de cada professor do turno
 ```javascript
-  MATCH (aluno:Aluno{ cidade: 'Recife' }) WHERE aluno.idade >= 21 RETURN aluno.nome, aluno.idade
+  MATCH (p:Professor)-[:ministra]->(d:Disciplina) RETURN p.nome as Professor, collect(d.nome) as Disciplinas
+```
+
+#### A média das idades dos alunos de cada cidade
+```javascript
+  MATCH (a:Aluno) RETURN DISTINCT a.cidade, avg(a.idade)
+```
+
+#### Listagem da Média Final por Disciplina
+```javascript
+  MATCH (a:Aluno)-[pd:pagadisciplina{ situacao: 'aprovado' }]->(d:Disciplina) RETURN d.nome as Disciplina, avg(pd.MF) as MF
 ```
 
 #### Excluir todos os nós e seus relacionamentos
