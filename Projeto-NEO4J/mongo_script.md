@@ -10,7 +10,7 @@ Realizar a migração de dados do projeto da Unidade 1.
 
  - Insere um médico
   ```javascript
-  db.orientado_documento.insertOne({
+  db.medicos.insertOne({
     registro: "015974/PE",
     nome: "Dr João Marcio Garcia",
     celular: "(81) 9 9959-7113",
@@ -23,7 +23,7 @@ Realizar a migração de dados do projeto da Unidade 1.
 
  - Insere vários médicos
   ```javascript
-  db.orientado_documento.insertMany([
+  db.medicos.insertMany([
     {
       registro: "067439/PE",
       nome: "Dr Haniel Brião Bulhosa",
@@ -83,7 +83,7 @@ Realizar a migração de dados do projeto da Unidade 1.
 
  - Insere vários pacientes
   ```javascript
-    db.orientado_documento.insertMany([
+    db.pacientes.insertMany([
       {
         "cpf": "311.954.500-79",
         "nome": "Jorge Casqueira Godinho",
@@ -93,7 +93,11 @@ Realizar a migração de dados do projeto da Unidade 1.
         "endereco": {
           "cep": "50610-300",
           "numero": "35"
-        }
+        },
+        prescricao: [
+          {"medicamento":"Mantidan 100 mg COMP Marca","administracao":"Administrar 1 cp","data":{"$date":"2022-01-25T18:22:16.000Z"}}
+          {"medicamento":"DIPIRONA 500MG, CP 444 MG","administracao":"COMPRIMIDO Administrar 3 MILIGRAMA, VIA FD - FEDIDIUM 1 x ao Dia Início: 23:00 - Diluir Conforme Protocolo da Unidade.","data":{"$date":"2022-01-25T18:03:57.000Z"}}
+        ],
       },
       {
         "cpf": "353.122.974-53",
@@ -104,7 +108,10 @@ Realizar a migração de dados do projeto da Unidade 1.
         "endereco": {
           "cep": "50110-435",
           "numero": "45"
-        }
+        },
+        "prescricao": [
+          {"medicamento":"SORO FISIOLOGICO 0,9% - 10 ML 10,000 ML - FLACONETE, 100,00 ML - CLORETO DE SODIO 20% - 20 ML 20,000 ML - AMPOLA - ML 100,000 MILILITRO","administracao":"Iniciar com 6,670 gt/min - Durante: 10:00 hora(s), Volume Total: 200,00 ML, Via EV - ENDOVENOSO 1x ao Dia","data":{"$date":"2022-01-25T18:06:16.000Z"}}
+        ]
       },
       {
         "cpf": "452.215.184-57",
@@ -115,7 +122,10 @@ Realizar a migração de dados do projeto da Unidade 1.
         "endereco": {
           "cep": "50640-030",
           "numero": "1621"
-        }
+        },
+        "prescricao": [
+         {"medicamento":"AAS 100 mg Comp Similar","administracao":"Administrar 1 cp","data":{"$date":"2022-01-25T18:07:38.000Z"}}
+        ]
       },
       {
         "cpf": "934.783.604-47",
@@ -126,7 +136,10 @@ Realizar a migração de dados do projeto da Unidade 1.
         "endereco": {
           "cep": "50610-300",
           "numero": "888"
-        }
+        },
+        "prescricao": [
+          {"medicamento":"Mantidan 100 mg COMP Marca","administracao":"Administrar 1 cp","data":{"$date":"2022-01-25T18:08:19.000Z"}}
+        ]
       },
       {
         "cpf": "563.576.984-58",
@@ -137,7 +150,8 @@ Realizar a migração de dados do projeto da Unidade 1.
         "endereco": {
           "cep": "50110-110",
           "numero": "2165"
-        }
+        },
+         "prescricao": []
       },
       {
         "cpf": "475.444.784-08",
@@ -179,20 +193,34 @@ Realizar a migração de dados do projeto da Unidade 1.
 
  - Atualiza um médico adicionando outra especialização ao seu Array de Especializações
   ```javascript
-    db.orientado_documento.updateOne({ registro: "098755/PE" }, { $push: { especializacoes: "Obstretra" } })
+    db.medicos.updateOne({ registro: "098755/PE" }, { $push: { especializacoes: "Obstretra" } })
   ``` 
+  
  - Atualiza vários médico adicionando um campo salário e atribuindo o valor de 8500
   ```javascript
-    db.orientado_documento.updateMany({}, { $set: { salario: 8500 } })
+    db.medicos.updateMany({}, { $set: { salario: 8500 } })
   ``` 
+ 
  - Atualiza um médico com filtro pelo registro e atualiza todos os campos
   ```javascript
-    db.orientado_documento.replaceOne({ registro: "015974/PE" },{
+    db.medicos.replaceOne({ registro: "015974/PE" },{
       registro: "015974/PE",
       nome: "Dr João Marcio Garcia",
       celular: "(81) 9 9959-7113",
       email: "joão_marcio@mail.com",
       especializacoes: ["Podologista"],
+      prescricao: [
+        {
+          "medicamento": "Tomat 1(um) comprimido",
+          "administra": "por via oral, a cada 12 horas, por 7 dias.",
+          "data": "2022-01-25 03:44:57"
+        },
+        {
+          "medicamento": "Mantidan 100 mg COMP Marca",
+          "administra": "Administrar 1 cp",
+          "data": "2022-01-25 15:22:16"
+        },
+      ],
       cep: "55819-068",
       numero: "55",
       salario: 9200
@@ -203,29 +231,23 @@ Realizar a migração de dados do projeto da Unidade 1.
 
  - Deleta um médico
   ```javascript
-    db.orientado_documento.deleteOne({ registro: "015974/PE" })
+  db.medicos.deleteOne({ registro: "015974/PE" })
   ```
+
 - Deleta vários médicos que tem salário maior ou igual a 9200
   ```javascript
-    db.orientado_documento.deleteMany({ salario: { $gte: 9200 } })
+  db.medicos.deleteMany({ salario: { $gte: 9200 } })
   ```
 
 #### Selecionar dados (Find( )) 
 
-  ```javascript
-    db.orientado_documento.deleteOne({ registro: "015974/PE" })
-  ```
 
-  ```javascript
-    db.orientado_documento.deleteMany({ salario: { $gte: 9200 } })
-  ```
+#### Extra 
 
-  #### Extra 
-
-  - Percorre os documentos e insere um objeto com o endereco composto por cep e número
+  - Percorre os documentos e insere um objeto com o endereco composto por cep e número e exclui os campos cep e número
   ```javascript
-    db.orientado_documento.find().forEach((doc) => {
-      db.orientado_documento.updateOne(
+    db.medicos.find().forEach((doc) => {
+      db.medicos.updateOne(
         { _id: doc._id }, {
           "$set": { "endereco": { "cep": doc.cep, "numero": doc.numero } },
           "$unset": {"cep": 1, "numero": 1}
