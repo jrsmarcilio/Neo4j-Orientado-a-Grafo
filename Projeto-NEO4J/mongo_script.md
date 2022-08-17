@@ -227,6 +227,9 @@ Realizar a migração de dados do projeto da Unidade 1.
     });
   ``` 
 
+ - Atualiza o nome da especialização obstretra para obstetra
+
+
 #### Deletar documentos baseados em alguma condição(deleteOne( ) e deleteMany( ))
 
  - Deleta um médico
@@ -241,7 +244,19 @@ Realizar a migração de dados do projeto da Unidade 1.
 
 #### Selecionar dados (Find( )) 
 
+ - Projeção de dados simples, de array e subobjetos.
 
+```javascript 
+  db.medicos.find({}, {nome: 1, celular: 1, email: 1})
+```
+
+```javascript 
+  db.pacientes.find({}, { _id: 0, nome: 1, 'endereco.cep': 1 })
+```
+
+```javascript 
+  db.pacientes.find({ }, { _id: 0, nome: 1, 'prescricao.medicamento': 1  })
+```
 
 #### Extra 
 
