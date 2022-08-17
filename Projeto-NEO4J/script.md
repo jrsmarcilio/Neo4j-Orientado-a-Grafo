@@ -1,113 +1,113 @@
-CREATE(Francisco: Professor {
+CREATE(f: Professor {
   nome: 'Francisco do Nascimento',
   titulacao: 'Doutorado',
   formacao: 'Ciencia da Computacao',
   email: 'francisco.junior@jaboatao.ifpe.edu.br'
 });
-CREATE(Diego: Professor {
+CREATE(d: Professor {
   nome: 'Diego dos Passos',
   titulacao: 'Mestre',
   formacao: 'Engenharia da Computacao',
   email: 'diego.silva@jaboatao.ifpe.edu.br'
 });
-CREATE(Josino: Professor {
+CREATE(j: Professor {
   nome: 'Josino Rodrigues',
   titulacao: 'Mestre',
-  formacao: 'Analise e Desenvolvimento de s)',
+  formacao: 'Analise e Desenvolvimento de Sistemas',
   email: 'josino.neto@jaboatao.ifpe.edu.br'
 });
-CREATE(Luciano: Professor {
+CREATE(l: Professor {
   nome: 'Luciano de Souza',
   titulacao: 'Doutorado',
   formacao: 'Ciencia da Computacao',
   email: 'luciano.cabral@jaboatao.ifpe.edu.br'
 });
-CREATE(Ana: Professor {
+CREATE(a: Professor {
   nome: 'Ana Josil Sa Barreto',
   titulacao: 'Mestrado',
   formacao: 'Letras',
   email: 'ana.montenegro@jaboatao.ifpe.edu.br'
 });
 
-CREATE(Sistemas: Disciplina { nome: 'Sistemas Distribuidos', CH: 60 });
-CREATE(WEBII: Disciplina { nome: 'WEB III', CH: 40 });
-CREATE(WEBIII: Disciplina { nome: 'WEB II', CH: 80 });
+CREATE(j1: Disciplina { nome: 'Sistemas Distribuidos', CH: 60 })
+CREATE(j2: Disciplina { nome: 'WEB III', CH: 40 })
+CREATE(j3: Disciplina { nome: 'WEB II', CH: 80 })
 
-CREATE(Projeto: Disciplina { nome: 'Projeto e Pratica I', CH: 80 });
+CREATE(f1: Disciplina { nome: 'Projeto e Pratica I', CH: 80 })
 
-CREATE(Redes: Disciplina { nome: 'Redes de Computadores', CH: 80 });
-CREATE(Seguranca: Disciplina { nome: 'Segurança de Sistemas', CH: 80 });
+CREATE(d1: Disciplina { nome: 'Redes de Computadores', CH: 80 })
+CREATE(d2: Disciplina { nome: 'Segurança de Sistemas', CH: 80 })
 
-CREATE(Portugues: Disciplina { nome: 'Portugues Instrumental', CH: 60 });
-CREATE(Ingles: Disciplina { nome: 'Ingles I', CH: 60 });
+CREATE(a1: Disciplina { nome: 'Portugues Instrumental', CH: 60 })
+CREATE(a2: Disciplina { nome: 'Ingles I', CH: 60 })
 
-CREATE(Inteligencia: Disciplina { nome: 'Inteligencia Artificial', CH: 60 });
+CREATE(l1: Disciplina { nome: 'Inteligencia Artificial', CH: 60 })
 
-CREATE(ads: Curso { nome: 'ADS', coord: 'Diego dos Passos' });
-CREATE(ipi: Curso { nome: 'IPI', coord: 'Francisco do Nascimento' });
-CREATE(qualidade: Curso { nome: 'Qualidade', coord: 'Francisco Chaves' });
+CREATE(ads: Curso { nome: 'ADS', coord: 'Diego dos Passos' })
+CREATE(ipi: Curso { nome: 'IPI', coord: 'Francisco do Nascimento' })
+CREATE(qualidade: Curso { nome: 'Qualidade', coord: 'Francisco Chaves' })
 
-CREATE(Marcilio: Aluno {
+CREATE(mg: Aluno {
   nome: 'Marcilio Goncalves Santos Junior',
   idade: 29,
   cidade: 'Jaboatao dos Guararapes',
   formacao: 'N/A'
 });
-CREATE(Talitha: Aluno {
+CREATE(tb: Aluno {
   nome: 'Talitha Bianka Santana Da Silva Santiago',
   idade: 18,
   cidade: 'Recife',
   formacao: 'N/A'
 });
-CREATE(Mayara: Aluno {
+CREATE(ma: Aluno {
   nome: 'Mayara Alves De Andrade',
   idade: 21,
   cidade: 'Jaboatao dos Guararapes',
   formacao: 'N/A'
 });
-CREATE(Allan: Aluno {
+CREATE(ap: Aluno {
   nome: 'Allan Patrick Freire Nascimento',
   idade: 23,
   cidade: 'Recife',
   formacao: 'N/A'
 });
-CREATE(Romullo: Aluno {
+CREATE(rg: Aluno {
   nome: 'Romullo Gomes De Souza',
   idade: 24,
   cidade: 'Jaboatao dos Guararapes',
   formacao: 'N/A'
 });
-CREATE(Ana: Aluno {
+CREATE(ab: Aluno {
   nome: 'Ana Beatriz Rodrigues Dos Santos ',
   idade: 29,
   cidade: 'Jaboatao dos Guararapes',
   formacao: 'N/A'
 });
 
-CREATE Diego-[:ministra{ turno: 'manha' }]->(Redes)
-CREATE Diego-[:ministra{ turno: 'manha' }]->(Seguranca)
-CREATE Josino-[:ministra{ turno: 'manha' }]->(Sistemas)
-CREATE Josino-[:ministra{ turno: 'manha' }]->(WEBII)
-CREATE Josino-[:ministra{ turno: 'manha' }]->(WEBIII)
-CREATE Francisco-[:ministra{ turno: 'noite' }]->(Projeto)
-CREATE Ana-[:ministra{ turno: 'noite' }]->(Portugues)
-CREATE Ana-[:ministra{ turno: 'noite' }]->(Ingles)
-CREATE Luciano-[:ministra{ turno: 'noite' }]->(Inteligencia)
+CREATE (d)-[:ministra{ turno: 'manha' }]->(d1)
+CREATE (d)-[:ministra{ turno: 'manha' }]->(d2)
+CREATE (j)-[:ministra{ turno: 'manha' }]->(j1)
+CREATE (j)-[:ministra{ turno: 'manha' }]->(j2)
+CREATE (j)-[:ministra{ turno: 'manha' }]->(j3)
+CREATE (p1)-[:ministra{ turno: 'noite' }]->(d1)
+CREATE (a)-[:ministra{ turno: 'noite' }]->(a1)
+CREATE (a)-[:ministra{ turno: 'noite' }]->(a2)
+CREATE (l)-[:ministra{ turno: 'noite' }]->(l1)
 
-CREATE Marcilio-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Ingles)
-CREATE Marcilio-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Redes)
-CREATE Marcilio-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(Projeto)
-CREATE Marcilio-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(Sistemas)
-CREATE Marcilio-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'aprovado' }]->(Seguranca)
-CREATE Marcilio-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(WEBIII)
-CREATE Talitha-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Ingles)
-CREATE Talitha-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Redes)
-CREATE Talitha-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(Projeto)
-CREATE Talitha-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(Sistemas)
-CREATE Talitha-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'pendente' }]->(Inteligencia)
-CREATE Ana-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Portugues)
-CREATE Ana-[:pagadisciplina{ MF: 9.2, semestre: 2, situacao: 'aprovado' }]->(Matematica)
-CREATE Ana-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(Ingles)
+CREATE (mg)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a2)
+CREATE (mg)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1)
+CREATE (mg)-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(f1)
+CREATE (mg)-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(j1)
+CREATE (mg)-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'aprovado' }]->(d2)
+CREATE (mg)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(j2)
+CREATE (tb)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a2)
+CREATE (tb)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(d1)
+CREATE (tb)-[:pagadisciplina{ MF: 0, semestre: 2, situacao: 'pendente' }]->(f1)
+CREATE (tb)-[:pagadisciplina{ MF: 0, semestre: 1, situacao: 'pendente' }]->(j1)
+CREATE (tb)-[:pagadisciplina{ MF: 7.1, semestre: 1, situacao: 'pendente' }]->(l1)
+CREATE (ab)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a1)
+CREATE (ab)-[:pagadisciplina{ MF: 9.2, semestre: 2, situacao: 'aprovado' }]->(a2)
+CREATE (ab)-[:pagadisciplina{ MF: 10, semestre: 2, situacao: 'aprovado' }]->(a2)
 
 CONSULTAS
 
